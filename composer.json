@@ -1,0 +1,32 @@
+{
+    "name": "netflex/newsletter-foundation",
+    "description": "Templates and components for Netflex Newsletters",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Netflex\\NewsletterFoundation\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Olav Øyen",
+            "email": "olav@apility.no"
+        }
+    ],
+    "require": {
+        "netflex/framework": "^4.34",
+        "mexitek/phpcolors": "^1.0",
+        "php": "^7.4|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Netflex\\NewsletterFoundation\\Providers\\NewsletterFoundationServiceProvider"
+            ]
+        }
+    }
+}

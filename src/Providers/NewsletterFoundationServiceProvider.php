@@ -4,6 +4,8 @@ namespace Netflex\NewsletterFoundation\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Netflex\NewsletterFoundation\Console\Commands\RegisterComponentsCommand;
+use Netflex\NewsletterFoundation\Console\Commands\RegisterTemplateCommand;
 
 class NewsletterFoundationServiceProvider extends ServiceProvider
 {
@@ -24,11 +26,18 @@ class NewsletterFoundationServiceProvider extends ServiceProvider
       $this->loadViewComponentsAs('nnf', [
         \Netflex\NewsletterFoundation\View\Components\Image::class,
         \Netflex\NewsletterFoundation\View\Components\EntryContent::class,
-    ]);
+      ]);
 
       $this->publishes([
         __DIR__ . '/../../resources/views' => base_path('resources/views/vendor/netflex-newsletter-foundation'),
       ], 'views');
+
+      if ($this->app->runningInConsole()) {
+        $this->commands([
+            RegisterComponentsCommand::class,
+            RegisterTemplateCommand::class,
+        ]);
+    }
 
     }
 

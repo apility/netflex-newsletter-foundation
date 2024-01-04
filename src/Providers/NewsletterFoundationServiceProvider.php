@@ -21,9 +21,9 @@ class NewsletterFoundationServiceProvider extends ServiceProvider
         'newsletter-foundation'
       );
 
-      $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'nnf');
+      $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'netflex-newsletter-foundation');
 
-      $this->loadViewComponentsAs('nnf', [
+      $this->loadViewComponentsAs('netflex-newsletter-foundation', [
         \Netflex\NewsletterFoundation\View\Components\Image::class,
         \Netflex\NewsletterFoundation\View\Components\EntryContent::class,
       ]);

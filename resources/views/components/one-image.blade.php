@@ -8,10 +8,10 @@
 @endphp
 
 <!-- One image -->
-<x-nnf::grid-1 bodyPadding="0" contentWidth="{{ $bodyWidth }}" contentPadding="0" bodyBackground="{{ $bodyBackground }}">
-  <x-nnf::content-block>
-    <x-nnf::content-row>
-      <x-nnf-image area="col_img" :size="$bodyWidth" />
-    </x-nnf::content-row>
-  </x-nnf::content-block>
-</x-nnf::grid-1>
+<x-netflex-newsletter-foundation::grid-1 bodyPadding="0" contentWidth="{{ $bodyWidth }}" contentPadding="0" bodyBackground="{{ $bodyBackground }}">
+  <x-netflex-newsletter-foundation::content-block>
+    <x-netflex-newsletter-foundation::content-row>
+      <x-netflex-newsletter-foundation-image area="col_img" :size="$bodyWidth" />
+    </x-netflex-newsletter-foundation::content-row>
+  </x-netflex-newsletter-foundation::content-block>
+</x-netflex-newsletter-foundation::grid-1>

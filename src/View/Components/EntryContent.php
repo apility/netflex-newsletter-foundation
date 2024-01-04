@@ -53,6 +53,6 @@ class EntryContent extends Component
      */
     public function render()
     {
-        return view('nnf::components.entry-content');
+        return view('netflex-newsletter-foundation::components.entry-content');
     }
 }

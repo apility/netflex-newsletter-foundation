@@ -1,4 +1,4 @@
-<x-nnf::toolbar>
+<x-netflex-newsletter-foundation::toolbar>
 
   @if($default && !content($area, 'image'))
 
@@ -47,7 +47,7 @@
       <i class="fa fa-link"></i> Lenke
   </x-editor-button>
 
-</x-nnf::toolbar>
+</x-netflex-newsletter-foundation::toolbar>
 
 @if(!if_mode('edit') && (content($area . '__link') || $href))
 <a

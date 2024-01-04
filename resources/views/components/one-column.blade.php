@@ -9,7 +9,7 @@
 
 <!-- One column -->
 
-<x-nnf::section-toolbar>
+<x-netflex-newsletter-foundation::section-toolbar>
 
   <x-editor-button
     area="componentSetup"
@@ -26,8 +26,8 @@
   </x-editor-button>
 
 
-</x-nnf::section-toolbar>
+</x-netflex-newsletter-foundation::section-toolbar>
 
-<x-nnf::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
-  <x-nnf::default-content area="col_1" showTitle="{{ in_array(content('componentSetup'), ['imageOnly', 'textOnly', 'imageAndText']) ? false : true }}" showContent="{{ in_array(content('componentSetup'), ['imageOnly']) ? false : true }}" showImage="{{ in_array(content('componentSetup'), ['imageOnly', 'imageTextAndTitle', 'imageAndText']) ? true : false }}" />
-</x-nnf::grid-1>
+<x-netflex-newsletter-foundation::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
+  <x-netflex-newsletter-foundation::default-content area="col_1" showTitle="{{ in_array(content('componentSetup'), ['imageOnly', 'textOnly', 'imageAndText']) ? false : true }}" showContent="{{ in_array(content('componentSetup'), ['imageOnly']) ? false : true }}" showImage="{{ in_array(content('componentSetup'), ['imageOnly', 'imageTextAndTitle', 'imageAndText']) ? true : false }}" />
+</x-netflex-newsletter-foundation::grid-1>

@@ -7,13 +7,13 @@
 ])
 
 @if(if_mode('edit'))
-  <x-nnf::grid-1 contentPadding="{{ $contentPadding }}" bodyPadding="{{ $bodyPadding }}" bodyWidth="{{ $bodyWidth }}" contentWidth="{{ $bodyWidth }}" bodyBackground="{{ $bodyBackground }}">
-    <x-nnf::content-block>
-      <x-nnf::content-row>
+  <x-netflex-newsletter-foundation::grid-1 contentPadding="{{ $contentPadding }}" bodyPadding="{{ $bodyPadding }}" bodyWidth="{{ $bodyWidth }}" contentWidth="{{ $bodyWidth }}" bodyBackground="{{ $bodyBackground }}">
+    <x-netflex-newsletter-foundation::content-block>
+      <x-netflex-newsletter-foundation::content-row>
 @endif
     {!! $slot !!}
 @if(if_mode('edit'))
-      </x-nnf::content-row>
-    </x-nnf::content-block>
-  </x-nnf::grid-1>
+      </x-netflex-newsletter-foundation::content-row>
+    </x-netflex-newsletter-foundation::content-block>
+  </x-netflex-newsletter-foundation::grid-1>
 @endif

@@ -2,15 +2,15 @@
   'area' => 'col_buttons'
 ])
 
-<x-nnf::content-block>
+<x-netflex-newsletter-foundation::content-block>
 
-  <x-nnf::content-row>
+  <x-netflex-newsletter-foundation::content-row>
 
-    <x-nnf::section-toolbar :hideBackground="true" >
+    <x-netflex-newsletter-foundation::section-toolbar :hideBackground="true" >
 
       <x-editor-button
         area="{{ $area }}"
-        type="contentlist",
+        type="contentlist"
         name="Rediger knapper"
         description="Legg til eller fjern knapper ved å legge til/fjerne rader. For å endre rekkefølge bruker du dra/slipp. Du kan endre lenke,farge og størrelse på knappene når du har lukket vinduet."
       >
@@ -18,11 +18,11 @@
       </x-editor-button>
 
 
-    </x-nnf::section-toolbar>
+    </x-netflex-newsletter-foundation::section-toolbar>
 
     @foreach(content($area) as $hash => $button)
 
-    <x-nnf::section-toolbar :hideBackground="true" >
+    <x-netflex-newsletter-foundation::section-toolbar :hideBackground="true" >
 
       <small>{!! $button->name !!}:</small>
 
@@ -57,13 +57,13 @@
         <i class="fa fa-arrows-h"></i> Full bredde
       </x-editor-button>
 
-    </x-nnf::section-toolbar>
+    </x-netflex-newsletter-foundation::section-toolbar>
 
     @endforeach
 
     @foreach(content($area) as $hash => $button)
 
-      <x-nnf::button
+      <x-netflex-newsletter-foundation::button
         text="{!! $button->name !!}"
         href="{{ content($hash.'_link') ?  content($hash.'_link')->url : '#' }}"
         background="{{ content($hash.'_color') ?? config('newsletter-foundation.defaults.button.background') }}"
@@ -75,6 +75,6 @@
 
     @endforeach
 
-  </x-nnf::content-row>
+  </x-netflex-newsletter-foundation::content-row>
 
-</x-nnf::content-block>
+</x-netflex-newsletter-foundation::content-block>

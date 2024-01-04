@@ -22,15 +22,15 @@ Please note that component images must be added manually in netflex, as adding t
 
 To register a template manually that uses the foundation template, add a view in your `resources/views/newsletters` folder with the following content:
 
-    @include('nnf::templates.foundation')
+    @include('netflex-newsletter-foundation::templates.foundation')
 
 This includes the foundation template from the package. You can then register the template as normal in Netflex.
 
 You may also extend the foundation layout using 
 
-    @extends('nnf::layouts.foundation')
+    @extends('netflex-newsletter-foundation::layouts.foundation')
 
-If you want to register one of the package components inside netflex, you should use the prefix `nnf::` as a part of the path, in example `nnf::one-column`
+If you want to register one of the package components inside netflex, you should use the prefix `netflex-newsletter-foundation::` as a part of the path, in example `netflex-newsletter-foundation::one-column`
 
 **Remember to fill the code-field with "newsletter_component" on all components registered in netflex, and on all block builder areas added to a newsletter template to filter out these components from page builder templates.**
 
@@ -63,7 +63,7 @@ You may publish the assets to your project using the command `php artisan vendor
 This will copy templates, layouts and components to `resources/views/vendor/netflex-newsletter-foundation`
 
 ## Extending
-To implement your own components, you may reuse the existing anonymous base components with the `nnf::` prefix when using a component from your project, in example `<x-nnf::default-content />`
-For using class components, use `x-nff-` , in example `<x-nnf-image />` 
+To implement your own components, you may reuse the existing anonymous base components with the `netflex-newsletter-foundation::` prefix when using a component from your project, in example `<x-netflex-newsletter-foundation::default-content />`
+For using class components, use `x-netflex-newsletter-foundation-` , in example `<x-netflex-newsletter-foundation-image />` 
 
 

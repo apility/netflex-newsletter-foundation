@@ -7,7 +7,7 @@
   $bodyWidth = $variables['bodyWidth'] ?? config('newsletter-foundation.defaults.body.width');
 @endphp
 
-<x-nnf::section-toolbar>
+<x-netflex-newsletter-foundation::section-toolbar>
 
   <x-editor-button
     area="componentSetup"
@@ -34,22 +34,22 @@
     <i class="fa fa-calendar"></i> Velg oppføringer
   </x-editor-button>
 
-</x-nnf::section-toolbar>
+</x-netflex-newsletter-foundation::section-toolbar>
 
 @if(content('entry')->count())
   <!-- One image event image -->
   @if(!content('componentSetup') || in_array(content('componentSetup'), ['imageOnly', 'imageTextAndTitle', 'imageAndText']))
-    <x-nnf::grid-1 bodyPadding="0" contentWidth="{{ $bodyWidth }}" contentPadding="0" bodyBackground="{{ $bodyBackground }}">
-      <x-nnf::content-block>
-        <x-nnf::content-row >
-          <x-nnf-image area="col_img" :size="$bodyWidth" :default="content('entry')->first()->newsletterImage" />
-        </x-nnf::content-row>
-      </x-nnf::content-block>
-    </x-nnf::grid-1>
+    <x-netflex-newsletter-foundation::grid-1 bodyPadding="0" contentWidth="{{ $bodyWidth }}" contentPadding="0" bodyBackground="{{ $bodyBackground }}">
+      <x-netflex-newsletter-foundation::content-block>
+        <x-netflex-newsletter-foundation::content-row >
+          <x-netflex-newsletter-foundation-image area="col_img" :size="$bodyWidth" :default="content('entry')->first()->newsletterImage" />
+        </x-netflex-newsletter-foundation::content-row>
+      </x-netflex-newsletter-foundation::content-block>
+    </x-netflex-newsletter-foundation::grid-1>
   @endif
   <!-- One column event content -->
-  <x-nnf::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
-    <x-nnf-entry-content
+  <x-netflex-newsletter-foundation::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
+    <x-netflex-newsletter-foundation-entry-content
       :event="content('entry')->first()"
       alignment="left"
       :withImage="false"
@@ -62,5 +62,5 @@
         'buttonClass' => 'main-entry-button'
       ]"
     />
-  </x-nnf::grid-1>
+  </x-netflex-newsletter-foundation::grid-1>
 @endif

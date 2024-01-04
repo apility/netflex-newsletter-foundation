@@ -13,9 +13,9 @@
 
 <!-- Title section -->
 
-<x-nnf::section-toolbar/>
+<x-netflex-newsletter-foundation::section-toolbar/>
 
-<x-nnf::grid-1 alignment="left" bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
+<x-netflex-newsletter-foundation::grid-1 alignment="left" bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
   <x-inline is="h4" area="title" style="text-align:left;">{{ config('newsletter-foundation.defaults.content.title') }}</x-inline>
-  <x-nnf::rule area="ruleColor" />
-</x-nnf::grid-1>
+  <x-netflex-newsletter-foundation::rule area="ruleColor" />
+</x-netflex-newsletter-foundation::grid-1>

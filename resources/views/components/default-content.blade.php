@@ -10,20 +10,20 @@
   'imageClass' => null
 ])
 
-<x-nnf::content-block>
+<x-netflex-newsletter-foundation::content-block>
 
   @if($showImage)
-  <x-nnf::content-row>
-    <x-nnf-image area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $imageClass }}" />
-  </x-nnf::content-row>
+  <x-netflex-newsletter-foundation::content-row>
+    <x-netflex-newsletter-foundation-image area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $imageClass }}" />
+  </x-netflex-newsletter-foundation::content-row>
   @endif
 
   @if($showImage && ($showContent || $showTitle))
-    <x-nnf::spacing height="10" />
+    <x-netflex-newsletter-foundation::spacing height="10" />
   @endif
 
   @if($showTitle)
-  <x-nnf::content-row>
+  <x-netflex-newsletter-foundation::content-row>
     <x-inline area="{{ $area }}_title">
       @if($title)
         {!! $title !!}
@@ -31,11 +31,11 @@
         {!! Config::get('newsletter-foundation.defaults.content.title')!!}
       @endif
     </x-inline>
-  </x-nnf::content-row>
+  </x-netflex-newsletter-foundation::content-row>
   @endif
 
   @if($showContent)
-  <x-nnf::content-row>
+  <x-netflex-newsletter-foundation::content-row>
     <x-inline area="{{ $area }}_content">
       @if($content)
         {!! $content !!}
@@ -43,7 +43,7 @@
         {!! Config::get('newsletter-foundation.defaults.content.paragraph') !!}
       @endif
     </x-inline>
-  </x-nnf::content-row>
+  </x-netflex-newsletter-foundation::content-row>
   @endif
 
-</x-nnf::content-block>
+</x-netflex-newsletter-foundation::content-block>

@@ -1,22 +1,22 @@
 <?php
 
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Placement of custom styles file (blade files)
     |--------------------------------------------------------------------------
     |
-    | Do not include .blade.php. Files are automatically inlined in 
+    | Do not include .blade.php. Files are automatically inlined in
     | foundation template.
     |
     */
-    
+
     'css_paths' => [
-        'nnf::styles/foundation',
-        'nnf::styles/custom'
+        'netflex-newsletter-foundation::styles/foundation',
+        'netflex-newsletter-foundation::styles/custom'
     ],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Background colors
@@ -25,13 +25,13 @@ return [
     | Custom color selector will be automatically added to theme color list.
     |
     */
-    
+
     'background_colors' => [
         '#ffffff' => 'Hvit',
         '#000000' => 'Sort',
         '#333333' => 'Mørk grå',
     ],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Text colors
@@ -110,7 +110,7 @@ return [
     | Template defaults
     |--------------------------------------------------------------------------
     |
-    | If you change sizing settings like widths or paddings, be sure to 
+    | If you change sizing settings like widths or paddings, be sure to
     | test all components properly on all device sizes in a testing tool like
     | litmus or emailonacid. E-mail clients behave badly.
     |
@@ -144,6 +144,8 @@ return [
         ],
         'button' => [
             'background' => '#000000',
+            'border' => 'none',
+            'border_radius' => 0,
             'padding' => 'medium',
             'font_size' => 'medium',
             'font_weight' => 'bold',

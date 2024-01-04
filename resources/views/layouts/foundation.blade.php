@@ -40,28 +40,28 @@ app()->setLocale(content('newsletterLocale', 'select') ?? app()->getLocale());
   $bodyBackground = content('newsletterBodyBackground', 'text') ?? config('newsletter-foundation.defaults.content.background');
 @endphp
 
-<body style="margin:0; padding:0; background-color:{{ $background ?? config('newsletter-foundation.defaults.body.background') }}; mso-line-height-rule: exactly;">
+<body style="margin:0; padding:0; background-color:{{ $background }}; mso-line-height-rule: exactly;">
 
-  <x-nnf::preview-text />
-  <x-nnf::newsletter-toolbar />
+  <x-netflex-newsletter-foundation::preview-text />
+  <x-netflex-newsletter-foundation::newsletter-toolbar />
 
   <center>
 
     <!-- Place header logic here -->
 
     <!-- Before body spacing -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background ?? config('newsletter-foundation.defaults.body.background') }}">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background }}">
       <tr>
           <td align="center" valign="top">
-              <x-nnf::content-block>
-                  <x-nnf::spacing height="25" />
-              </x-nnf::content-block>
+              <x-netflex-newsletter-foundation::content-block>
+                  <x-netflex-newsletter-foundation::spacing height="25" />
+              </x-netflex-newsletter-foundation::content-block>
           </td>
       </tr>
     </table>
 
     <!-- Body -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background ?? config('newsletter-foundation.defaults.body.background') }}">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background }}">
         <tr>
             <td align="center" valign="top">
                 @yield('body')
@@ -71,12 +71,12 @@ app()->setLocale(content('newsletterLocale', 'select') ?? app()->getLocale());
 
     <!-- After body spacing -->
 
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background ?? config('newsletter-foundation.defaults.body.background') }}">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="{{ $background }}">
       <tr>
           <td align="center" valign="top">
-              <x-nnf::content-block>
-                  <x-nnf::spacing height="25" />
-              </x-nnf::content-block>
+              <x-netflex-newsletter-foundation::content-block>
+                  <x-netflex-newsletter-foundation::spacing height="25" />
+              </x-netflex-newsletter-foundation::content-block>
           </td>
       </tr>
     </table>

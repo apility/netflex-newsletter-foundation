@@ -10,7 +10,7 @@
   $contentPadding = $variables['contentPadding'] ?? config('newsletter-foundation.defaults.content.padding');
 @endphp
 
-<x-nnf::section-toolbar>
+<x-netflex-newsletter-foundation::section-toolbar>
 
   <x-editor-button
     area="componentSetup"
@@ -23,7 +23,7 @@
     <i class="fa fa-th-large"></i> Oppsett
   </x-editor-button>
 
-</x-nnf::section-toolbar>
+</x-netflex-newsletter-foundation::section-toolbar>
 
 @php
   $columnWidth = floor($contentWidth / 3);
@@ -32,14 +32,14 @@
 
 <!-- Three columns -->
 
-<x-nnf::grid-3
+<x-netflex-newsletter-foundation::grid-3
     columnWidth="{{ $columnWidth }}"
     bodyBackground="{{ get_newsletter_background($bodyBackground) }}"
     bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}"
   >
   <x-slot name="columnOneContent">
 
-    <x-nnf::default-content
+    <x-netflex-newsletter-foundation::default-content
       area="col_1"
       showImage="{{ !in_array(content('componentSetup'), ['textOnly']) ? true : false }}"
       showContent="{{ !in_array(content('componentSetup'), ['imagesOnly']) ? true : false }}"
@@ -50,7 +50,7 @@
 
   <x-slot name="columnTwoContent">
 
-    <x-nnf::default-content
+    <x-netflex-newsletter-foundation::default-content
       area="col_2"
       showImage="{{ !in_array(content('componentSetup'), ['textOnly']) ? true : false }}"
       showContent="{{ !in_array(content('componentSetup'), ['imagesOnly']) ? true : false }}"
@@ -61,7 +61,7 @@
 
   <x-slot name="columnThreeContent">
 
-    <x-nnf::default-content
+    <x-netflex-newsletter-foundation::default-content
       area="col_3"
       showImage="{{ !in_array(content('componentSetup'), ['textOnly']) ? true : false }}"
       showContent="{{ !in_array(content('componentSetup'), ['imagesOnly']) ? true : false }}"
@@ -69,4 +69,4 @@
     />
 
   </x-slot>
-</x-nnf::grid-3>
+</x-netflex-newsletter-foundation::grid-3>

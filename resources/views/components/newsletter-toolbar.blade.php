@@ -1,4 +1,4 @@
-<x-nnf::toolbar bodyWidth="100%" contentWidth="100%">
+<x-netflex-newsletter-foundation::toolbar bodyWidth="100%" contentWidth="100%">
 
   <x-editor-button
     area="newsletterBackground"
@@ -23,4 +23,4 @@
     </x-editor-button>
   @endif
 
-</x-nnf::toolbar>
+</x-netflex-newsletter-foundation::toolbar>

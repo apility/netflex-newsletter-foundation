@@ -2,7 +2,7 @@
   'hideBackground' => false
 ])
 
-<x-nnf::toolbar>
+<x-netflex-newsletter-foundation::toolbar>
 
   @if(!$hideBackground)
     <x-editor-button
@@ -31,5 +31,5 @@
 
   {!! $slot !!}
 
-</x-nnf::toolbar>
+</x-netflex-newsletter-foundation::toolbar>
 

@@ -12,7 +12,7 @@
 @endphp
 
 
-<x-nnf::section-toolbar>
+<x-netflex-newsletter-foundation::section-toolbar>
 
   <x-editor-button
     area="componentSetup"
@@ -36,7 +36,7 @@
     <i class="fa fa-tags"></i> Velg oppføringer
   </x-editor-button>
 
-</x-nnf::section-toolbar>
+</x-netflex-newsletter-foundation::section-toolbar>
 
 
 @php
@@ -52,21 +52,21 @@
 
   @foreach(content('entries') as $entry)
 
-      <x-nnf::grid-2
+      <x-netflex-newsletter-foundation::grid-2
         columnOneWidth="{{ $columnOneWidth }}"
         columnTwoWidth="{{ $columnTwoWidth }}"
         bodyBackground="{{ get_newsletter_background($bodyBackground) }}"
         bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}"
       >
         <x-slot name="columnOneContent">
-          <x-nnf-entry-content :event="$entry" :withImage="true" :withTitle="true" :withContent="true"  :imageWidth="($columnTwoWidth - ($contentPadding * 2))"/>
+          <x-netflex-newsletter-foundation-entry-content :event="$entry" :withImage="true" :withTitle="true" :withContent="true"  :imageWidth="($columnTwoWidth - ($contentPadding * 2))"/>
         </x-slot>
 
         <x-slot name="columnTwoContent">
-          <x-nnf-entry-content :event="$entry" :withImage="false" />
+          <x-netflex-newsletter-foundation-entry-content :event="$entry" :withImage="false" />
         </x-slot>
 
-    </x-nnf::grid-2>
+    </x-netflex-newsletter-foundation::grid-2>
 
   @endforeach
 
@@ -79,7 +79,7 @@
       $columnTwoWidth = $contentWidth / 2;
     @endphp
 
-    <x-nnf::grid-2
+    <x-netflex-newsletter-foundation::grid-2
       columnOneWidth="{{ $columnOneWidth }}"
       columnTwoWidth="{{ $columnTwoWidth }}"
       bodyBackground="{{ get_newsletter_background($bodyBackground) }}"
@@ -87,17 +87,17 @@
     >
         <x-slot name="columnOneContent">
           @if($entry = $chunk->shift())
-            <x-nnf-entry-content area="col_1" :event="$entry" :withImage="true" :withTitle="true" :withContent="true" :imageWidth="($columnOneWidth - ($contentPadding * 2))" :isCard="true" />
+            <x-netflex-newsletter-foundation-entry-content area="col_1" :event="$entry" :withImage="true" :withTitle="true" :withContent="true" :imageWidth="($columnOneWidth - ($contentPadding * 2))" :isCard="true" />
           @endif
         </x-slot>
 
         <x-slot name="columnTwoContent">
           @if($entry = $chunk->shift())
-            <x-nnf-entry-content area="col_2" :event="$entry" :withImage="true" :withTitle="true" :withContent="true" :imageWidth="($columnTwoWidth - ($contentPadding * 2))" :isCard="true" />
+            <x-netflex-newsletter-foundation-entry-content area="col_2" :event="$entry" :withImage="true" :withTitle="true" :withContent="true" :imageWidth="($columnTwoWidth - ($contentPadding * 2))" :isCard="true" />
           @endif
         </x-slot>
 
-    </x-nnf::grid-2>
+    </x-netflex-newsletter-foundation::grid-2>
 
   @endforeach
 
@@ -109,29 +109,29 @@ $columnWidth = $contentWidth / 3;
 
   @foreach(content('entries')->chunk(3) as $chunk)
 
-    <x-nnf::grid-3
+    <x-netflex-newsletter-foundation::grid-3
       bodyBackground="{{ get_newsletter_background($bodyBackground) }}"
       bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}"
     >
         <x-slot name="columnOneContent">
           @if($entry = $chunk->shift())
-            <x-nnf-entry-content area="col_1" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
+            <x-netflex-newsletter-foundation-entry-content area="col_1" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
           @endif
         </x-slot>
 
         <x-slot name="columnTwoContent">
           @if($entry = $chunk->shift())
-            <x-nnf-entry-content area="col_2" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
+            <x-netflex-newsletter-foundation-entry-content area="col_2" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
           @endif
         </x-slot>
 
         <x-slot name="columnThreeContent">
           @if($entry = $chunk->shift())
-            <x-nnf-entry-content area="col_3" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
+            <x-netflex-newsletter-foundation-entry-content area="col_3" :event="$entry" :withImage="true" :imageWidth="($columnWidth - ($contentPadding * 2))" :isCard="true" />
           @endif
         </x-slot>
 
-    </x-nnf::grid-3>
+    </x-netflex-newsletter-foundation::grid-3>
 
   @endforeach
 

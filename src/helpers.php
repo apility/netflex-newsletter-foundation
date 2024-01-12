@@ -66,9 +66,9 @@ if (!function_exists('get_newsletter_background')) {
     {
         if(content('bodyBackground') === 'custom')
         {
-            return content('bodyBackgroundColorCode') ?? $fallback;
+            return content('bodyBackgroundColorCode') ?: $fallback;
         }
 
-        return content('bodyBackground') ?? $fallback;
+        return content('bodyBackground') ?: $fallback;
     }
 }

@@ -23,10 +23,10 @@
       <table width="{{ $contentWidth }}" cellspacing="0" cellpadding="0" border="0" align="center" class="{{ $isResponsive ? ($bodyPadding ? 'container' : 'container-full') : null }}" style="max-width:{{ $contentWidth }}px; width:100%;">
         <tr>
           <th width="{{ floor($columnOneWidth) }}" align="center" class="{{ $isResponsive ? ($contentPadding ? 'mobile' : 'mobile-full') : null }}" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $columnOneContent !!}
+            {!! $columnOneContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnTwoWidth) }}" align="center" class="{{ $isResponsive ? (($contentPadding ? 'mobile' : 'mobile-full') . '-last') : null }}" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $columnTwoContent !!}
+            {!! $columnTwoContent ?? '&nbsp;' !!}
           </th>
         </tr>
       </table>

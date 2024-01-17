@@ -20,7 +20,7 @@
       <table width="{{ $contentWidth }}" cellspacing="0" cellpadding="0" class="{{ $bodyPadding ? 'container' : 'container-full'}}" border="0" align="center" style="max-width:{{ $contentWidth }}px; width:100%;">
         <tr>
           <th align="center" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $slot !!}
+            {!! $slot ?? '&nbsp;' !!}
           </th>
         </tr>
       </table>

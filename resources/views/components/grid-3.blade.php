@@ -21,13 +21,13 @@
       <table width="{{ $contentWidth }}" cellspacing="0" cellpadding="0" border="0" align="center" class="{{ $bodyPadding ? 'container' : 'container-full'}}" style="max-width:{{ $contentWidth }}px; width:100%;">
         <tr>
           <th width="{{ floor($columnWidth) }}" align="center" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $columnOneContent !!}
+            {!! $columnOneContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $columnTwoContent !!}
+            {!! $columnTwoContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}-last" valign="top" style="padding:{{ $contentPadding }}px;">
-            {!! $columnThreeContent !!}
+            {!! $columnThreeContent ?? '&nbsp;' !!}
           </th>
         </tr>
       </table>

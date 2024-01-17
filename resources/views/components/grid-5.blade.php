@@ -21,19 +21,19 @@
       <table width="{{ $contentWidth }}" cellspacing="0" cellpadding="0" class="{{ $bodyPadding ? 'container' : 'container-full'}}" border="0" align="center" style="max-width:{{ $contentWidth }}px; width:100%;">
         <tr>
           <th width="{{ floor($columnWidth) }}" align="center" valign="top" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" style="padding:{{ $contentPadding }}px;">
-            {!! $columnOneContent !!}
+            {!! $columnOneContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" valign="top" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" style="padding:{{ $contentPadding }}px;">
-            {!! $columnTwoContent !!}
+            {!! $columnTwoContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" valign="top" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" style="padding:{{ $contentPadding }}px;">
-            {!! $columnThreeContent !!}
+            {!! $columnThreeContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" valign="top" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}" style="padding:{{ $contentPadding }}px;">
-            {!! $columnFourContent !!}
+            {!! $columnFourContent ?? '&nbsp;' !!}
           </th>
           <th width="{{ floor($columnWidth) }}" align="center" valign="top" class="{{ $contentPadding ? 'mobile' : 'mobile-full'}}-last" style="padding:{{ $contentPadding }}px;">
-            {!! $columnFiveContent !!}
+            {!! $columnFiveContent ?? '&nbsp;' !!}
           </th>
         </tr>
       </table>

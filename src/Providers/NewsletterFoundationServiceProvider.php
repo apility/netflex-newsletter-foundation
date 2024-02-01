@@ -12,32 +12,29 @@ class NewsletterFoundationServiceProvider extends ServiceProvider
 
     public function boot()
     {
-      $this->publishes([
-        __DIR__ . '/../../config/newsletter-foundation.php' => $this->app->configPath('newsletter-foundation.php')
-      ], 'config');
+        $this->publishes([
+            __DIR__ . '/../../config/newsletter-foundation.php' => $this->app->configPath('newsletter-foundation.php')
+        ], 'config');
 
-      $this->mergeConfigFrom(
-        __DIR__ . '/../../config/newsletter-foundation.php',
-        'newsletter-foundation'
-      );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/newsletter-foundation.php',
+            'newsletter-foundation'
+        );
 
-      $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'netflex-newsletter-foundation');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'netflex-newsletter-foundation');
 
-      $this->loadViewComponentsAs('netflex-newsletter-foundation', [
-        \Netflex\NewsletterFoundation\View\Components\Image::class,
-        \Netflex\NewsletterFoundation\View\Components\EntryContent::class,
-      ]);
+        Blade::componentNamespace('Netflex\NewsletterFoundation\View\Components', 'netflex-newsletter-foundation');
 
-      $this->publishes([
-        __DIR__ . '/../../resources/views' => base_path('resources/views/vendor/netflex-newsletter-foundation'),
-      ], 'views');
+        $this->publishes([
+            __DIR__ . '/../../resources/views' => base_path('resources/views/vendor/netflex-newsletter-foundation'),
+        ], 'views');
 
-      if ($this->app->runningInConsole()) {
-        $this->commands([
-            RegisterComponentsCommand::class,
-            RegisterTemplateCommand::class,
-        ]);
-    }
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                RegisterComponentsCommand::class,
+                RegisterTemplateCommand::class,
+            ]);
+        }
 
     }
 

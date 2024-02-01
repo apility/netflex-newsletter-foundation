@@ -14,7 +14,7 @@
 
   @if($showImage)
   <x-netflex-newsletter-foundation::content-row>
-    <x-netflex-newsletter-foundation-image area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $imageClass }}" />
+    <x-netflex-newsletter-foundation::image area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $imageClass }}" />
   </x-netflex-newsletter-foundation::content-row>
   @endif
 

@@ -50,7 +50,7 @@
   <!-- One column event content -->
   <x-netflex-newsletter-foundation::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
     <x-netflex-newsletter-foundation::entry-content
-      :event="content('entry')->first()"
+      :entry="content('entry')->first()"
       alignment="left"
       :withImage="false"
       :withTitle="in_array(content('componentSetup'), ['imageOnly', 'textOnly', 'imageAndText']) ? false : true"

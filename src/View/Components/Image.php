@@ -25,8 +25,9 @@ class Image extends Component
     public $title;
     public $class;
     public $href;
+    public ?string $cdn;
 
-    public function __construct($area, $size, $mode = '4:3', $styles = null, $default = null, $class = null, $href = null)
+    public function __construct($area, $size, $mode = '4:3', $styles = null, $default = null, $class = null, $href = null, ?string $cdn = null)
     {
         $this->area = $area;
         $this->size = $size;
@@ -34,6 +35,7 @@ class Image extends Component
         $this->styles = $styles;
         $this->default = $default;
         $this->dimensions = $this->getDimensions();
+        $this->cdn = $cdn;
         $this->src = $this->getImageSrc();
         $this->alt = $this->getAlt();
         $this->title = $this->getTitle();
@@ -41,7 +43,7 @@ class Image extends Component
         $this->href = $href;
     }
 
-    public function imageFormats()
+    public function imageFormats(): array
     {
         return array_merge(Config::get('newsletter-foundation.image_formats'), ['custom' => 'Velg eget format']);
     }
@@ -84,21 +86,22 @@ class Image extends Component
         return null;
     }
 
-    public function getDimensions()
+    public function getDimensions(): string
     {
         $width = $this->size * 3;
         $height = $this->getHeight() * 3;
         return $width . 'x' . floor($height);
     }
 
-    public function getImageSrc()
+    public function getImageSrc(): ?string
     {
-        if(content($this->area, 'image'))
-        {
-            return media_url(content($this->area, 'image'), $this->getDimensions());
-        } elseif($this->default) {
-            return media_url($this->default, $this->getDimensions());
+        if(content($this->area, 'image')) {
+            return media_url(content($this->area, 'image'), $this->getDimensions(), 'rc', '255,255,255,1', null, [], $this->cdn);
+        } elseif ($this->default) {
+            return media_url($this->default, $this->getDimensions(), 'rc', '255,255,255,1', null, [], $this->cdn);
         }
+
+        return null;
     }
 
     /**

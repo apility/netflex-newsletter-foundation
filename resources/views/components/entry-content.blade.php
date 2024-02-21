@@ -3,7 +3,7 @@
     @if ($withImage)
 
         <x-netflex-newsletter-foundation::content-row>
-              <x-netflex-newsletter-foundation-image href="{{ url($entry->newsletterReadMoreLink) }}" area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $settings['imageClass'] }}"
+              <x-netflex-newsletter-foundation::image href="{{ url($entry->newsletterReadMoreLink) }}" area="{{ $area }}_image" size="{{ $imageWidth }}" class="{{ $settings['imageClass'] }}"
                   :default="$entry->newsletterImage" />
         </x-netflex-newsletter-foundation::content-row>
 

@@ -149,7 +149,7 @@ return [
             'padding' => 'medium',
             'font_size' => 'medium',
             'font_weight' => 'bold',
-            'text' => __('Les mer') . ' &rarr;',
+            'text' => 'Les mer &rarr;',
             'class' => 'button',
         ],
         'entry_list' => [

@@ -69,7 +69,7 @@
       size="{{ $dimensions }}"
       style="max-width:{{ $size }}px; width: 100%; height: auto;"
       class="g-img img {{ $class }}"
-      default="{{ $default }}"
+      src="{{ is_array($default) && array_key_exists('path', $default) ? $default['path'] : $default }}"
     />
   @else
     @if($src)

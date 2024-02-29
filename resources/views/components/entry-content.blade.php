@@ -42,7 +42,7 @@
         is="div"
         class="{{ $settings['contentClass'] }}"
       >
-        @if($withentryDescription)
+        @if($withDescription)
           {!! $entry->newsletterIntro() !!}
         @endif
       </x-inline>

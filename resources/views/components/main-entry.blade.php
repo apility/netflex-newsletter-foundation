@@ -31,7 +31,7 @@
     max="1"
     :model="config('newsletter-foundation.entry_list.models')"
   >
-    <i class="fa fa-calendar"></i> Velg oppføringer
+    <i class="fa fa-tags"></i> Velg oppføringer
   </x-editor-button>
 
 </x-netflex-newsletter-foundation::section-toolbar>

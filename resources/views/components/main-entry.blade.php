@@ -39,23 +39,35 @@
 @if(content('entry')->count())
   <!-- One image event image -->
   @if(!content('componentSetup') || in_array(content('componentSetup'), ['imageOnly', 'imageTextAndTitle', 'imageAndText']))
-    <x-netflex-newsletter-foundation::grid-1 bodyPadding="0" contentWidth="{{ $bodyWidth }}" contentPadding="0" bodyBackground="{{ $bodyBackground }}">
+    <x-netflex-newsletter-foundation::grid-1
+      bodyPadding="0"
+      contentWidth="{{ $bodyWidth }}"
+      contentPadding="0"
+      bodyBackground="{{ $bodyBackground }}"
+    >
       <x-netflex-newsletter-foundation::content-block>
-        <x-netflex-newsletter-foundation::content-row >
-          <x-netflex-newsletter-foundation::image area="col_img" :size="$bodyWidth" :default="content('entry')->first()->newsletterImage" />
+        <x-netflex-newsletter-foundation::content-row>
+          <x-netflex-newsletter-foundation::image
+            area="col_img"
+            :size="$bodyWidth"
+            :default="content('entry')->first()->newsletterImage()"
+          />
         </x-netflex-newsletter-foundation::content-row>
       </x-netflex-newsletter-foundation::content-block>
     </x-netflex-newsletter-foundation::grid-1>
   @endif
   <!-- One column event content -->
-  <x-netflex-newsletter-foundation::grid-1 bodyBackground="{{ get_newsletter_background($bodyBackground) }}" bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}">
+  <x-netflex-newsletter-foundation::grid-1
+    bodyBackground="{{ get_newsletter_background($bodyBackground) }}"
+    bodyColor="{{ get_newsletter_text_color(get_newsletter_background($bodyBackground)) }}"
+  >
     <x-netflex-newsletter-foundation::entry-content
       :entry="content('entry')->first()"
       alignment="left"
       :withImage="false"
       :withTitle="in_array(content('componentSetup'), ['imageOnly', 'textOnly', 'imageAndText']) ? false : true"
       :withContent="in_array(content('componentSetup'), ['imageOnly']) ? false : true"
-      :withEventDescription="true"
+      :withDescription="true"
       :settings="[
         'alignment' => 'left',
         'titleHeaderSelector' => 'h1',

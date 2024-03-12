@@ -65,7 +65,7 @@
 
       <x-netflex-newsletter-foundation::button
         text="{!! $button->name !!}"
-        href="{{ content($hash.'_link') ?  content($hash.'_link')->url : '#' }}"
+        href="{{ content($hash.'_link') ?  content($hash.'_link')->url : '/' }}"
         background="{{ content($hash.'_color') ?? config('newsletter-foundation.defaults.button.background') }}"
         color="{{ get_newsletter_text_color(content($hash.'_color') ?? config('newsletter-foundation.defaults.button.background')) }}"
         padding="{{ get_newsletter_button_padding(content($hash.'_size') ?? config('newsletter-foundation.defaults.button.padding')) }}"

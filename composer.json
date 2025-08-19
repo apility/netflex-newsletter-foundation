@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "netflex/framework": "^4.34||^5.0",
+        "netflex/framework": "^4.34||^5.0|^6.0",
         "mexitek/phpcolors": "^1.0",
         "php": "^7.4||^8.0"
     },

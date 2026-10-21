@@ -20,9 +20,9 @@
     "require": {
         "mexitek/phpcolors": "^1.0",
         "php": "^7.4||^8.0",
-        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/view": "^8.0|^9.0|^10.0|^11.0|^12.0"
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/view": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0"
     },
     "extra": {
         "laravel": {
